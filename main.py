@@ -1,3 +1,4 @@
+import sys
 from stats import get_num_words, get_char_freq, sort_char_freq
 
 def get_book_text(path_to_file):
@@ -5,9 +6,13 @@ def get_book_text(path_to_file):
         return f.read()
 
 def main():
-    book_path = "./books/frankenstein.txt"
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    else:
+        book_path = sys.argv[1]
+    
     text = get_book_text(book_path)
-
     word_count = get_num_words(text)
     char_freq = get_char_freq(text)
     sorted_char_freq = sort_char_freq(char_freq)
@@ -20,5 +25,6 @@ def main():
     for item in sorted_char_freq:
         print(f"{item["char"]}: {item["num"]}")
     print("============= END ===============")
+
 
 main()
