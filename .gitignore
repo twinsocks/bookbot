@@ -1,1 +1,5 @@
-/books
+# gitignore
+
+__pycache__/
+*.py[cod]
+books/
