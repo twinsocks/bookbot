@@ -1,3 +1,3 @@
 # bookbot
 
-BookBot is my first [Boot.dev](https://www.boot.dev) project!
+A beginner project to count words, characters, and character frequencies of long text documents.
